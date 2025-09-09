@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website jualan clone</title>
+    <title>website jualan by clone</title>
     <style>
         * {
             margin: 0;
@@ -14,6 +14,7 @@
         
         body {
             overflow-x: hidden;
+            background-color: #0a0a0a;
         }
         
         /* Background video */
@@ -24,6 +25,7 @@
             min-width: 100%;
             min-height: 100%;
             z-index: -1;
+            opacity: 0.8;
         }
         
         /* Login container */
@@ -43,18 +45,20 @@
         }
         
         .login-form {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             padding: 30px;
             border-radius: 10px;
             width: 350px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
             color: white;
+            border: 1px solid #ff0000;
         }
         
         .login-form h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #ff0000;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
         }
         
         .login-form input {
@@ -64,6 +68,7 @@
             border: none;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.9);
+            color: #000;
         }
         
         .login-form button {
@@ -76,6 +81,11 @@
             cursor: pointer;
             margin-top: 10px;
             font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .login-form button:hover {
+            background: #cc0000;
         }
         
         /* Main content */
@@ -91,12 +101,15 @@
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             margin-bottom: 20px;
+            border: 1px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
         }
         
         .header h1 {
             color: #ff0000;
             font-size: 2.5em;
             margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
         }
         
         .header p {
@@ -116,6 +129,12 @@
             padding: 20px;
             border-radius: 10px;
             border: 1px solid #ff0000;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
         }
         
         .box h3 {
@@ -124,6 +143,7 @@
             text-align: center;
             border-bottom: 1px solid #ff0000;
             padding-bottom: 10px;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
         }
         
         .box ul {
@@ -151,6 +171,39 @@
         .feature-list li {
             padding: 5px 0;
         }
+        
+        .payment-button {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .payment-button:hover {
+            background: #cc0000;
+        }
+        
+        .payment-info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 5px;
+            border: 1px solid #ff0000;
+        }
+        
+        .warning-text {
+            color: #ff9900;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -162,7 +215,7 @@
     <!-- Login Form -->
     <div class="login-container" id="loginContainer">
         <div class="login-form">
-            <h2>web jualan by clone usn: pw: isi aja cak tetap bisa masuk asal jangan kosong</h2>
+            <h2>welcome kalo di minta usn: pw: isi aja bakal bisa masuk asal ga kosong aja</h2>
             <input type="text" id="username" placeholder="Username">
             <input type="password" id="password" placeholder="Password">
             <button onclick="login()">MASUK</button>
@@ -175,7 +228,7 @@
     <!-- Main Content -->
     <div class="main-content" id="mainContent">
         <div class="header">
-            <h1>welcome in website jualan clone</h1>
+            <h1>welcome to website login clone</h1>
             <p>Developer: clone</p>
         </div>
         
@@ -195,7 +248,7 @@
                 <h3>Akun ORI</h3>
                 <ul>
                     <li>Ready stock akun kolsul ori: 1</li>
-                    <li>Ready stock akun koljur ori: 1</li>
+                    <li>Ready stock akun koljur ori: 2</li>
                     <li>Ready stock akun terhormat ori: 1</li>
                 </ul>
             </div>
@@ -351,11 +404,49 @@
                     <li>murid php = 15k</li>
                 </ul>
             </div>
+            
+            <!-- Box tambahan 4: LIST NOKOS BY clone -->
+            <div class="box">
+                <h3>LIST NOKOS BY clone</h3>
+                <ul>
+                    <li>nokos indo = 5k</li>
+                    <li>nokos rusia = 21k</li>
+                    <li>nokos uk = 12k</li>
+                    <li>nokos ph = 6k</li>
+                    <li>nokos malaysia = 15k</li>
+                    <li>nokos japan = 21k</li>
+                    <li>nokos vietnam = 7k</li>
+                </ul>
+            </div>
+            
+            <!-- Box tambahan 5: Murband by clone -->
+            <div class="box">
+                <h3>Murband by clone</h3>
+                <ul>
+                    <li>murid banned public = 15k</li>
+                    <li>murid banned private = 25k</li>
+                </ul>
+            </div>
+            
+            <!-- Box tambahan 6: Payment clone store -->
+            <div class="box">
+                <h3>Payment Clone Store</h3>
+                <ul>
+                    <li>
+                        dana: 
+                        <button class="payment-button" onclick="togglePaymentInfo('dana-info')">Tampilkan Nomor</button>
+                        <div id="dana-info" class="payment-info">081227274189</div>
+                    </li>
+                    <li>ovo: beku</li>
+                    <li>qris: chat ke nomor ini 6285857671388</li>
+                </ul>
+                <p class="warning-text">HARAP SEND BUKTI TF KE NOMOR YANG DI SEDIAKAN DI QRIS</p>
+            </div>
         </div>
     </div>
 
     <script>
-        
+      
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
@@ -375,6 +466,16 @@
                 login();
             }
         });
+        
+        
+        function togglePaymentInfo(id) {
+            const infoElement = document.getElementById(id);
+            if (infoElement.style.display === 'block') {
+                infoElement.style.display = 'none';
+            } else {
+                infoElement.style.display = 'block';
+            }
+        }
     </script>
 </body>
-                </html>                        
+                                                                    </html>                                            
