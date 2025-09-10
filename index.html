@@ -1,4 +1,4 @@
-         <!DOCTYPE html>
+                                               <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -117,6 +117,40 @@
             font-style: italic;
         }
         
+        .dashboard-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: 1px solid #ff0000;
+            cursor: pointer;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .tab-button.active {
+            background: #ff0000;
+            font-weight: bold;
+        }
+        
+        .tab-button:hover {
+            background: #cc0000;
+        }
+        
+        .dashboard-content {
+            display: none;
+        }
+        
+        .dashboard-content.active {
+            display: block;
+        }
+        
         .boxes-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -209,6 +243,24 @@
             color: #00ff00;
             font-style: italic;
         }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ff0000, transparent);
+            margin: 15px 0;
+        }
+        
+        .benefit-item {
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .benefit-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+        }
     </style>
 </head>
 <body>
@@ -233,331 +285,411 @@
     <!-- Main Content -->
     <div class="main-content" id="mainContent">
         <div class="header">
-            <h1>website jualan clone</h1>
+            <h1>welcome to website jualan by clone</h1>
             <p>Developer: clone</p>
         </div>
         
-        <div class="boxes-container">
-            <div class="box">
-                <h3>Akun US</h3>
-                <ul>
-                    <li>Ready stock akun kolsul us: 1</li>
-                    <li>Ready stock akun koljur us: 1</li>
-                    <li>Ready stock akun terhormat us: 1</li>
-                    <li class="sold">Ready stock akun ternama us: sold</li>
-                    <li class="sold">Ready stock akun ahli us: sold</li>
-                </ul>
+        <div class="dashboard-tabs">
+            <button class="tab-button active" onclick="switchTab('dashboard1')">Dashboard 1</button>
+            <button class="tab-button" onclick="switchTab('dashboard2')">Dashboard 2</button>
+        </div>
+        
+        <!-- Dashboard 1 Content -->
+        <div id="dashboard1" class="dashboard-content active">
+            <div class="boxes-container">
+                <div class="box">
+                    <h3>Akun US</h3>
+                    <ul>
+                        <li>Ready stock akun kolsul us: 1</li>
+                        <li>Ready stock akun koljur us: 1</li>
+                        <li class="sold">stock akun terhormat us: sold</li>
+                        <li class="sold">stock stock akun ternama us: sold</li>
+                        <li class="sold">stock akun ahli us: sold</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>Akun ORI</h3>
+                    <ul>
+                        <li>Ready stock akun kolsul ori: 1</li>
+                        <li>Ready stock akun koljur ori: 1</li>
+                        <li class="sold">stock akun terhormat ori: sold</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>Jasa Pembuatan Script</h3>
+                    <ul>
+                        <li>Jasa pembuatan script bug tele: 50k</li>
+                        <li>Jasa pembuatan script bug via wa: 45k</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>Benefit Script Bug Tele</h3>
+                    <ul>
+                        <li>Free req foto sc</li>
+                        <li>Free req function</li>
+                        <li>Free req nama fitur</li>
+                        <li>Free req fitur</li>
+                        <li>Semua yang di perluin gw yg bikin</li>
+                        <li>All clear siap pake</li>
+                        <li>Dan sama kaya via wa</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>JOKI HEMAT BY CLONE</h3>
+                    <ul>
+                        <li>gm to legend b1 = 9k</li>
+                        <li>epic to mawi b1 = 19k</li>
+                        <li>legend to mawi = 35k</li>
+                        <li>mawi granding full = 56k</li>
+                        <li>mawi b15 to honor 25 = 120k</li>
+                        <li>honor 25 to glory 50 = 189k</li>
+                        <li>glory 50 to imo 112 = 350k</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>JOKI GENDONG BY CLONE</h3>
+                    <ul>
+                        <li>1 bintang gm = 3k</li>
+                        <li>1 bintang epic = 4.5k</li>
+                        <li>1 bintang legend = 7k</li>
+                        <li>1 bintang mawi = 10k</li>
+                        <li>1 bintang honor = 13k</li>
+                        <li>1 bintang glory = 16k</li>
+                        <li>1 bintang imo = 19k</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>VPS BY CLONE</h3>
+                    <ul>
+                        <li>ram 8 core 6 = 20k</li>
+                        <li>ram 16 core 8= 45k</li>
+                        <li>ram 32 core 8 = 60k</li>
+                        <li>ram 32 core 16 = 150k</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>Function Bug by Clone</h3>
+                    <ul>
+                        <li>crash ui 15 msg new: 35k</li>
+                        <li>forceclose 1 msg all whatsapp new: 70k</li>
+                        <li>delayhard invisible tahan 2hari new:130k</li>
+                        <li>forceclose×blank ios 15 msg new: 100k</li>
+                        <li>forceclose invis ios new: 50k</li>
+                        <li>delayhard no invis: 60k</li>
+                        <li>forceclose beta 1 msg new: 70k</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>Script Bug Gacor</h3>
+                    <ul>
+                        <li>tredict Invictus no update: 50k</li>
+                        <li>tredict invictus update 3x: 70k</li>
+                        <li>tredict invictus free update perma: 100k</li>
+                        <li>clone crasher no update: 25k</li>
+                        <li>clone crasher free update perma: 40k</li>
+                        <li>alya crasher no update : 30k</li>
+                        <li>alya crasher free update: 50k</li>
+                        <li>scary invictus no update: 35k</li>
+                        <li>scary invictus free update: 75k</li>
+                    </ul>
+                </div>
+                
+                <div class="box">
+                    <h3>APK BUG GACOR by clone</h3>
+                    <ul>
+                        <li>rdvsp project v4</li>
+                        <li>member: 35k/bulan</li>
+                        <li>permanen: 100k</li>
+                        <li>reseller: 75k/bulan</li>
+                        <li>reseller permanen 150k/bulan</li>
+                        <li>Vip accest: 75k/bulan</li>
+                        <li>vip accest permanen: 170k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box Fitur APK Bug RDVSP Project V4 -->
+                <div class="box">
+                    <h3>Fitur APK Bug RDVSP Project V4</h3>
+                    <ul class="feature-list">
+                        <li><strong>Feature:</strong></li>
+                        <li>- DDoS { Website,Server,Wifi }</li>
+                        <li>- Bug WhatsApp</li>
+                        <li>- Chatting Whit User</li>
+                        <li>- WiFi Kill { Attack Router }</li>
+                        <li>- Spam NGL</li>
+                        <li>- Nik Parse { Parsenik }</li>
+                        <li>- Sub Domain Finder</li>
+                        <li>- No sender</li>
+                        <li>- cooldown only 45 detik</li>
+                        <li><strong>Bug Type:</strong></li>
+                        <li>- Crash Infinity ✓</li>
+                        <li>- Crash Android ✓</li>
+                        <li>- Crash IOS ✓</li>
+                        <li>- Blank Freze Phone ✓</li>
+                        <li>- Delay Invisible ✓</li>
+                        <li><strong>DDoS Methods:</strong></li>
+                        <li>- ICMP</li>
+                        <li>- UDP</li>
+                        <li>- TCP SYN-PPS</li>
+                        <li>- TCP ACK-PPS</li>
+                        <li>- TCP SYN-GBPS</li>
+                        <li>- TCP ACK-GBPS</li>
+                    </ul>
+                </div>
+                
+                <!-- Box Ready SC MD -->
+                <div class="box">
+                    <h3>Ready SC MD</h3>
+                    <ul>
+                        <li>ready sc md via wa 1k fitur = 10k enc</li>
+                        <li>ready sc md via wa 2k fitur = 17k enc</li>
+                        <li>ready sc md via wa 3k fitur = 25k enc</li>
+                        <li>ready sc md via tele 700 fitur = 35k no enc</li>
+                    </ul>
+                </div>
+                
+                <!-- Box Layanan Murid -->
+                <div class="box">
+                    <h3>Layanan Murid by Clone</h3>
+                    <ul>
+                        <li>murid python = 15k</li>
+                        <li>murid javascript = 10k</li>
+                        <li>murid html = 15k</li>
+                        <li>murid css = 25k</li>
+                        <li>murid c++ = 30k</li>
+                        <li>murid php = 15k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box LIST NOKOS BY clone -->
+                <div class="box">
+                    <h3>LIST NOKOS BY clone</h3>
+                    <ul>
+                        <li>nokos indo = 5k</li>
+                        <li>nokos rusia = 21k</li>
+                        <li>nokos uk = 12k</li>
+                        <li>nokos ph = 6k</li>
+                        <li>nokos malaysia = 15k</li>
+                        <li>nokos japan = 21k</li>
+                        <li>nokos vietnam = 7k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box Murband by clone -->
+                <div class="box">
+                    <h3>Murband by clone</h3>
+                    <ul>
+                        <li>murid banned public = 15k</li>
+                        <li>murid banned private = 25k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box HARGA AKUN ML US -->
+                <div class="box">
+                    <h3>HARGA AKUN ML US</h3>
+                    <ul>
+                        <li>stock kolsul own mokad 3b ready 1 = 350k</li>
+                        <li>stock kolsul own on ready 1 = 250k</li>
+                        <li>stock koljur ml us own on ready 1 = 100k</li>
+                        <li class="sold">stock terhormat us own mokad = sold</li>
+                        <li class="sold">stock ternama us own mokad = sold</li>
+                    </ul>
+                </div>
+                
+                <!-- Box HARGA AKUN ML ORI -->
+                <div class="box">
+                    <h3>HARGA AKUN ML ORI</h3>
+                    <ul>
+                        <li class="tawar">stock kolsul own off 1 hari = tawar</li>
+                        <li>stock koljur own mokad 2 bulan = 240k</li>
+                        <li class="sold">stock terhormat ori = sold</li>
+                    </ul>
+                </div>
+                
+                <!-- Box LIST JASA BY CLONE -->
+                <div class="box">
+                    <h3>LIST JASA BY CLONE</h3>
+                    <ul>
+                        <li>jasa fix error web html = 5k</li>
+                        <li>jasa fix error script bug via tele = 4k</li>
+                        <li>jasa fix error script bug via wa = 6k</li>
+                        <li>jasa fix error tools python = 7k</li>
+                        <li>jasa tambah fitur sc bug via tele = 8k</li>
+                        <li>jasa encrypt html = 2k</li>
+                        <li>jasa encrypt bot bug = 1k</li>
+                        <li>jasa rename script bug via tele = 5k</li>
+                        <li>jasa rename apk cek ban = 5k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box JASA BIND BY CLONE -->
+                <div class="box">
+                    <h3>JASA BIND BY CLONE</h3>
+                    <ul>
+                        <li>1 akun = 10k</li>
+                        <li>2 akun = 20k</li>
+                        <li>3 akun = 30k</li>
+                        <li>4 akun = 40k</li>
+                        <li>5 akun = 45k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box JASA BUG BY CLONE -->
+                <div class="box">
+                    <h3>JASA BUG BY CLONE</h3>
+                    <ul>
+                        <li>1 nomor = 4k</li>
+                        <li>2 nomor = 7k</li>
+                        <li>3 nomor = 10k</li>
+                        <li>4 nomor = 13k</li>
+                        <li>5 nom极 = 15k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box PAKETAN JASA PEMBUATAN WEBSITE -->
+                <div class="box">
+                    <h3>PAKETAN JASA PEMBUATAN WEBSITE</h3>
+                    <ul>
+                        <li>website top up sudah terpasang api = 50k</li>
+                        <li>website portofolio = 15k</li>
+                        <li>website list joki = 25k</li>
+                        <li>website bug lengkap dengan function = 50k</li>
+                        <li>website bug tidak lengkap dengan function = 30k</li>
+                        <极>website bug dengan fitur ddos dan function = 70k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box PANEL PRIVATE BY CLONE -->
+                <div class="box">
+                    <h3>PANEL PRIVATE BY CLONE</h3>
+                    <ul>
+                        <li>1gb=1k</li>
+                        <li>2gb=2k</li>
+                        <li>3gb=3极</li>
+                        <li>4gb=4k</li>
+                        <li>5gb=5k</li>
+                        <li>6gb=6k</li>
+                        <li>7gb=7k</li>
+                        <li>8gb=8k</li>
+                        <li>9gb=9k</li>
+                        <li>10gb=10k</li>
+                        <li>unlimited= 11k</li>
+                        <li>reseller panel = 15k</li>
+                        <li>admin panel = 20k</li>
+                        <li>patnert panel = 25k</li>
+                        <li>owner panel = 30k</li>
+                        <li>tangan kanan panel = 40k</li>
+                    </ul>
+                    <p style="margin-top: 10px; color: #ff9900; font-size: 0.9em;">
+                        SPEK VPS? ram 16 core 8 | server baru 2 | baru create 3 hari | vps mokad? ga usah pt pt
+                    </p>
+                </div>
+                
+                <!-- Box Payment clone store -->
+                <div class="box">
+                    <h3>Payment Clone Store</h3>
+                    <ul>
+                        <li>
+                            dana: 
+                            <button class="payment-button" onclick="togglePaymentInfo('dana-info')">Tampilkan Nomor</button>
+                            <div id="dana-info" class="payment-info">081227274189</div>
+                        </li>
+                        <li>ovo: beku</极>
+                        <li>qris: chat ke nomor ini 6285857671388</li>
+                    </ul>
+                    <p class="warning-text">HARAP SEND BUKTI TF KE NOMOR YANG DI SEDIAKAN DI QRIS</p>
+                </div>
             </div>
-            
-            <div class="box">
-                <h3>Akun ORI</h3>
-                <ul>
-                    <li>Ready stock akun kolsul ori: 1</li>
-                    <li>Ready stock akun koljur ori: 2</li>
-                    <li class="sold">Ready stock akun terhormat ori: sold</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>Jasa Pembuatan Script</h3>
-                <ul>
-                    <li>Jasa pembuatan script bug tele: 50k</li>
-                    <li>Jasa pembuatan script bug via wa: 45k</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>Benefit Script Bug Tele</h3>
-                <ul>
-                    <li>Free req foto sc</li>
-                    <li>Free req function</li>
-                    <li>Free req nama fitur</li>
-                    <li>Free req fitur</li>
-                    <li>Semua yang di perluin gw yg bikin</li>
-                    <li>All clear siap pake</li>
-                    <li>Dan sama kaya via wa</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>JOKI HEMAT BY CLONE</h3>
-                <ul>
-                    <li>gm to legend b1 = 9k</li>
-                    <li>epic to mawi b1 = 19k</li>
-                    <li>legend to mawi = 35k</li>
-                    <li>mawi granding full = 56k</li>
-                    <li>mawi b15 to honor 25 = 120k</li>
-                    <li>honor 25 to glory 50 = 189k</li>
-                    <li>glory 50 to imo 112 = 350k</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>JOKI GENDONG BY CLONE</h3>
-                <ul>
-                    <li>1 bintang gm = 3k</li>
-                    <li>1 bintang epic = 4.5k</li>
-                    <li>1 bintang legend = 7k</li>
-                    <li>1 bintang mawi = 10k</li>
-                    <li>1 bintang honor = 13k</li>
-                    <li>1 bintang glory = 16k</li>
-                    <li>1 bintang imo = 19k</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>VPS BY CLONE</h3>
-                <ul>
-                    <li>ram 8 core 6 = 20k</li>
-                    <li>ram 16 core 8= 45k</li>
-                    <li>ram 32 core 8 = 60k</li>
-                    <li>ram 32 core 16 = 150k</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>Function Bug by Clone</h3>
-                <ul>
-                    <li>crash ui 15 msg new: 35k</li>
-                    <li>forceclose 1 msg all whatsapp new: 70k</li>
-                    <li>delayhard invisible tahan 2hari new:130k</li>
-                    <li>forceclose×blank ios 15 msg new: 100k</li>
-                    <li>forceclose invis ios new: 50k</li>
-                    <li>delayhard no invis: 60k</li>
-                    <li>forceclose beta 1 msg new: 70k</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>Script Bug Gacor</h3>
-                <ul>
-                    <li>tredict Invictus no update: 50k</li>
-                    <li>tredict invictus update 3x: 70k</li>
-                    <li>tredict invictus free update perma: 100k</li>
-                    <li>clone crasher no update: 25k</li>
-                    <li>clone crasher free update perma: 40k</li>
-                    <li>alya crasher no update : 30k</li>
-                    <li>alya crasher free update: 50k</li>
-                    <li>scary invictus no update: 35k</li>
-                    <li>scary invictus free update: 75k</li>
-                </ul>
-            </div>
-            
-            <div class="box">
-                <h3>APK BUG GACOR by clone</h3>
-                <ul>
-                    <li>rdvsp project v4</li>
-                    <li>member: 35k/bulan</li>
-                    <li>permanen: 100k</li>
-                    <li>reseller: 75k/bulan</li>
-                    <li>reseller permanen 150k/bulan</li>
-                    <li>Vip accest: 75k/bulan</li>
-                    <li>vip accest permanen: 170k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 1: Fitur APK Bug RDVSP Project V4 -->
-            <div class="box">
-                <h3>Fitur APK Bug RDVSP Project V4</h3>
-                <ul class="feature-list">
-                    <li><strong>Feature:</strong></li>
-                    <li>- DDoS { Website,Server,Wifi }</li>
-                    <li>- Bug WhatsApp</li>
-                    <li>- Chatting Whit User</li>
-                    <li>- WiFi Kill { Attack Router }</li>
-                    <li>- Spam NGL</li>
-                    <li>- Nik Parse { Parsenik }</li>
-                    <li>- Sub Domain Finder</li>
-                    <li>- No sender</li>
-                    <li>- cooldown only 45 detik</li>
-                    <li><strong>Bug Type:</strong></li>
-                    <li>- Crash Infinity ✓</li>
-                    <li>- Crash Android ✓</li>
-                    <li>- Crash IOS ✓</li>
-                    <li>- Blank Freze Phone ✓</li>
-                    <li>- Delay Invisible ✓</li>
-                    <li><strong>DDoS Methods:</strong></li>
-                    <li>- ICMP</li>
-                    <li>- UDP</li>
-                    <li>- TCP SYN-PPS</li>
-                    <li>- TCP ACK-PPS</li>
-                    <li>- TCP SYN-GBPS</li>
-                    <li>- TCP ACK-GBPS</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 2: Ready SC MD -->
-            <div class="box">
-                <h3>Ready SC MD</h3>
-                <ul>
-                    <li>ready sc md via wa 1k fitur = 10k enc</li>
-                    <li>ready sc md via wa 2k fitur = 17k enc</li>
-                    <li>ready sc md via wa 3k fitur = 25k enc</li>
-                    <li>ready sc md via tele 700 fitur = 35k no enc</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 3: Layanan Murid -->
-            <div class="box">
-                <h3>Layanan Murid by Clone</h3>
-                <ul>
-                    <li>murid python = 15k</li>
-                    <li>murid javascript = 10k</li>
-                    <li>murid html = 15k</li>
-                    <li>murid css = 25k</li>
-                    <li>murid c++ = 30k</li>
-                    <li>murid php = 15k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 4: LIST NOKOS BY clone -->
-            <div class="box">
-                <h3>LIST NOKOS BY clone</h3>
-                <ul>
-                    <li>nokos indo = 5k</li>
-                    <li>nokos rusia = 21k</li>
-                    <li>nokos uk = 12k</li>
-                    <li>nokos ph = 6k</li>
-                    <li>nokos malaysia = 15k</li>
-                    <li>nokos japan = 21k</li>
-                    <li>nokos vietnam = 7k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 5: Murband by clone -->
-            <div class="box">
-                <h3>Murband by clone</h3>
-                <ul>
-                    <li>murid banned public = 15k</li>
-                    <li>murid banned private = 25k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 6: HARGA AKUN ML US -->
-            <div class="box">
-                <h3>HARGA AKUN ML US</h3>
-                <ul>
-                    <li>stock kolsul own mokad 3b ready 1 = 350k</li>
-                    <li>stock kolsul own on ready 1 = 250k</li>
-                    <li>stock koljur ml us own on ready 1 = 100k</li>
-                    <li>stock terhormat us own mokad 1 = 40k</li>
-                    <li class="sold">stock ternama us own mokad = sold</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 7: HARGA AKUN ML ORI -->
-            <div class="box">
-                <h3>HARGA AKUN ML ORI</h3>
-                <ul>
-                    <li class="tawar">stock kolsul own off 1 hari = tawar</li>
-                    <li>stock koljur own mokad 2 bulan = 240k</li>
-                    <li class="sold">stock terhormat ori = sold</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 8: LIST JASA BY CLONE -->
-            <div class="box">
-                <h3>LIST JASA BY CLONE</h3>
-                <ul>
-                    <li>jasa fix error web html = 5k</li>
-                    <li>jasa fix error script bug via tele = 4k</li>
-                    <li>jasa fix error script bug via wa = 6k</li>
-                    <li>jasa fix error tools python = 7k</li>
-                    <li>jasa tambah fitur sc bug via tele = 8k</li>
-                    <li>jasa encrypt html = 2k</li>
-                    <li>jasa encrypt bot bug = 1k</li>
-                    <li>jasa rename script bug via tele = 5k</li>
-                    <li>jasa rename apk cek ban = 5k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 9: JASA BIND BY CLONE -->
-            <div class="box">
-                <h3>JASA BIND BY CLONE</h3>
-                <ul>
-                    <li>1 akun = 10k</li>
-                    <li>2 akun = 20k</li>
-                    <li>3 akun = 30k</li>
-                    <li>4 akun = 40k</li>
-                    <li>5 akun = 45k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 10: JASA BUG BY CLONE -->
-            <div class="box">
-                <h3>JASA BUG BY CLONE</h3>
-                <ul>
-                    <li>1 nomor = 4k</li>
-                    <li>2 nomor = 7k</li>
-                    <li>3 nomor = 10k</li>
-                    <li>4 nomor = 13k</li>
-                    <li>5 nomor = 15k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 11: PAKETAN JASA PEMBUATAN WEBSITE -->
-            <div class="box">
-                <h3>PAKETAN JASA PEMBUATAN WEBSITE</h3>
-                <ul>
-                    <li>website top up sudah terpasang api = 50k</li>
-                    <li>website portofolio = 15k</li>
-                    <li>website list joki = 25k</li>
-                    <li>website bug lengkap dengan function = 50k</li>
-                    <li>website bug tidak lengkap dengan function = 30k</li>
-                    <li>website bug dengan fitur ddos dan function = 70k</li>
-                </ul>
-            </div>
-            
-            <!-- Box tambahan 12: PANEL PRIVATE BY CLONE -->
-            <div class="box">
-                <h3>PANEL PRIVATE BY CLONE</h3>
-                <ul>
-                    <li>1gb=1k</li>
-                    <li>2gb=2k</li>
-                    <li>3gb=3k</li>
-                    <li>4gb=4k</li>
-                    <li>5gb=5k</li>
-                    <li>6gb=6k</li>
-                    <li>7gb=7k</li>
-                    <li>8gb=8k</li>
-                    <li>9gb=9k</li>
-                    <li>10gb=10k</li>
-                    <li>unlimited= 11k</li>
-                    <li>reseller panel = 15k</li>
-                    <li>admin panel = 20k</li>
-                    <li>patnert panel = 25k</li>
-                    <li>owner panel = 30k</li>
-                    <li>tangan kanan panel = 40k</li>
-                </ul>
-                <p style="margin-top: 10px; color: #ff9900; font-size: 0.9em;">
-                    SPEK VPS? ram 16 core 8 | server baru 2 | baru create 3 hari | vps mokad? ga usah pt pt
-                </p>
-            </div>
-            
-            <!-- Box tambahan 13: Payment clone store -->
-            <div class="box">
-                <h3>Payment Clone Store</h3>
-                <ul>
-                    <li>
-                        dana: 
-                        <button class="payment-button" onclick="togglePaymentInfo('dana-info')">Tampilkan Nomor</button>
-                        <div id="dana-info" class="payment-info">081227274189</div>
-                    </li>
-                    <li>ovo: beku</li>
-                    <li>qris: chat ke nomor ini 6285857671388</li>
-                </ul>
-                <p class="warning-text">HARAP SEND BUKTI TF KE NOMOR YANG DI SEDIAKAN DI QRIS</p>
+        </div>
+        
+        <!-- Dashboard 2 Content -->
+        <div id="dashboard2" class="dashboard-content">
+            <div class="boxes-container">
+                <!-- Box CLONE OPEN PATNERT -->
+                <div class="box">
+                    <h3>CLONE OPEN PATNERT</h3>
+                    <ul>
+                        <li>patnert vip = 20k</li>
+                        <li>patnert svip = 35k</li>
+                        <li>patnert super svip = 60k</li>
+                    </ul>
+                </div>
+                
+                <!-- Box PATNERT VIP -->
+                <div class="box">
+                    <h3>PATNERT VIP</h3>
+                    <ul>
+                        <li class="benefit-item">get function setiap hari</li>
+                        <li class="benefit-item">get code html setiap hari</li>
+                        <li class="benefit-item">get 300 file base</li>
+                        <li class="benefit-item">free fix sc error</li>
+                        <li class="benefit-item">dapat buyer kalo ada</li>
+                        <li class="benefit-item">masuk gb all patnert</li>
+                        <li class="benefit-item">get tutor pasang function</li>
+                    </ul>
+                </div>
+                
+                <!-- Box PATNERT SVIP -->
+                <div class="box">
+                    <h3>PATNERT SVIP</h3>
+                    <ul>
+                        <li class="benefit-item">get function setiap hari</li>
+                        <li class="benefit-item">get code html setiap hari</li>
+                        <li class="benefit-item">get 300 file base</li>
+                        <li class="benefit-item">free fix sc error</li>
+                        <li class="benefit-item">dapat buyer kalo ada</li>
+                        <li class="benefit-item">masuk gb all patnert</li>
+                        <li class="benefit-item">masuk tqto sc gw</li>
+                        <li class="benefit-item">get ress sc clonecrasher</li>
+                        <li class="benefit-item">get murid ban private</li>
+                        <li class="benefit-item">get murid unband</li>
+                        <li class="benefit-item">get sc database clonecrasher</li>
+                        <li class="benefit-item">get tutor pasang function</li>
+                    </ul>
+                </div>
+                
+                <!-- Box PATNERT SUPER VIP -->
+                <div class="box">
+                    <h3>PATNERT SUPER VIP</h3>
+                    <ul>
+                        <li class="benefit-item">get function setiap hari</li>
+                        <li class="benefit-item">get code html setiap hari</li>
+                        <li class="benefit-item">get 300 file base</li>
+                        <li class="benefit-item">free fix sc error</li>
+                        <li class="benefit-item">dapat buyer kalo ada</li>
+                        <li class="benefit-item">masuk gb all patnert</li>
+                        <li class="benefit-item">masuk tqto sc gw</li>
+                        <li class="benefit-item">get ress sc clonecrasher</li>
+                        <li class="benefit-item">get murid ban private patnert</li>
+                        <li class="benefit-item">get murid unband private patnert</li>
+                        <li class="benefit-item">get sc database clonecrasher</li>
+                        <li class="benefit-item">masuk ch 1.5kp no suntik</li>
+                        <li class="benefit-item">get tutor pasang function</li>
+                        <li class="benefit-item">get base 900</li>
+                        <li class="benefit-item">get all function gw 1k file</li>
+                        <li class="benefit-item">get patnert alyacrasher</li>
+                        <li class="benefit-item">get owner clonecrasher</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        
+        // Fungsi login yang menerima input apapun
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            
+            // Terima input apapun (selama tidak kosong)
             if (username.trim() !== '' && password.trim() !== '') {
                 document.getElementById('loginContainer').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
@@ -566,14 +698,14 @@
             }
         }
         
-        
+        // Support untuk tekan Enter untuk login
         document.getElementById('password').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 login();
             }
         });
         
-        
+        // Fungsi untuk menampilkan/sembunyikan info pembayaran
         function togglePaymentInfo(id) {
             const infoElement = document.getElementById(id);
             if (infoElement.style.display === 'block') {
@@ -582,6 +714,24 @@
                 infoElement.style.display = 'block';
             }
         }
+        
+        // Fungsi untuk beralih antara dashboard
+        function switchTab(tabId) {
+            // Sembunyikan semua tab
+            document.querySelectorAll('.dashboard-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Tampilkan tab yang dipilih
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update status aktif tombol tab
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
     </script>
 </body>
-                    </html>                                                         
+         </html>                                          
