@@ -1,4 +1,4 @@
-                                               <!DOCTYPE html>
+                                                        <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -9,56 +9,59 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
             overflow-x: hidden;
-            background-color: #0a0a0a;
         }
         
-        /* Background video */
-        #bg-video {
+      
+        #main-background {
             position: fixed;
             top: 0;
             left: 0;
             min-width: 100%;
             min-height: 100%;
-            z-index: -1;
-            opacity: 0.8;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            object-fit: cover;
         }
         
-        /* Login container */
-        .login-container {
+        
+        .login-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: url('https://files.catbox.moe/vajs8f.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+        
+        
+        .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url('https://files.catbox.moe/vajs8f.jpg') no-repeat center center fixed;
-            background-size: cover;
-            z-index: 1000;
-            transition: opacity 0.5s ease;
+            height: 100vh;
         }
         
         .login-form {
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.7);
             padding: 30px;
             border-radius: 10px;
             width: 350px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-            color: white;
-            border: 1px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            text-align: center;
         }
         
         .login-form h2 {
-            text-align: center;
+            color: #fff;
             margin-bottom: 20px;
-            color: #ff0000;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            font-size: 28px;
         }
         
         .login-form input {
@@ -74,13 +77,13 @@
         .login-form button {
             width: 100%;
             padding: 12px;
-            background: #ff0000;
-            color: white;
+            margin-top: 15px;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+            background: #ff0000;
+            color: white;
             font-weight: bold;
+            cursor: pointer;
             transition: background 0.3s;
         }
         
@@ -88,125 +91,65 @@
             background: #cc0000;
         }
         
-        /* Main content */
-        .main-content {
+        .developer-text {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        
+        /* Container untuk konten utama */
+        .main-container {
             display: none;
             padding: 20px;
-            color: white;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .header {
             text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ff0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
         
         .header h1 {
-            color: #ff0000;
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            font-size: 36px;
+            margin-bottom: 10px;
         }
         
-        .header p {
-            color: #ccc;
-            font-style: italic;
-        }
-        
-        .dashboard-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .tab-button {
-            padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: 1px solid #ff0000;
-            cursor: pointer;
-            margin: 0 5px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .tab-button.active {
-            background: #ff0000;
-            font-weight: bold;
-        }
-        
-        .tab-button:hover {
-            background: #cc0000;
-        }
-        
-        .dashboard-content {
-            display: none;
-        }
-        
-        .dashboard-content.active {
-            display: block;
-        }
-        
-        .boxes-container {
+        .payment-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
         
-        .box {
+        .payment-box {
             background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
             border-radius: 10px;
-            border: 1px solid #ff0000;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-            transition: transform 0.3s;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
         }
         
-        .box:hover {
-            transform: translateY(-5px);
-        }
-        
-        .box h3 {
-            color: #ff0000;
-            margin-bottom: 15px;
-            text-align: center;
-            border-bottom: 1px solid #ff0000;
+        .payment-box h3 {
+            border-bottom: 2px solid #ff0000;
             padding-bottom: 10px;
-            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+            margin-bottom: 15px;
+            color: #ffcc00;
         }
         
-        .box ul {
-            list-style: none;
+        .payment-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #444;
         }
         
-        .box li {
-            padding: 8px 0;
-            border-bottom: 1px solid #333;
-        }
-        
-        .box li:last-child {
+        .payment-item:last-child {
             border-bottom: none;
         }
         
-        .sold {
-            color: #ff0000;
-            font-weight: bold;
-        }
-        
-        .feature-list {
-            font-size: 0.9em;
-        }
-        
-        .feature-list li {
-            padding: 5px 0;
-        }
-        
-        .payment-button {
+        .buy-button {
             background: #ff0000;
             color: white;
             border: none;
@@ -214,7 +157,31 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
-            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .buy-button:hover {
+            background: #cc0000;
+        }
+        
+        .payment-methods {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        }
+        
+        .payment-button {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
             transition: background 0.3s;
         }
         
@@ -222,516 +189,448 @@
             background: #cc0000;
         }
         
-        .payment-info {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background: rgba(255, 0, 0, 0.2);
-            border-radius: 5px;
-            border: 1px solid #ff0000;
-        }
-        
-        .warning-text {
-            color: #ff9900;
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
             font-weight: bold;
-            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+        
+        .footer {
             text-align: center;
-            font-size: 0.9em;
-        }
-        
-        .tawar {
-            color: #00ff00;
-            font-style: italic;
-        }
-        
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ff0000, transparent);
-            margin: 15px 0;
-        }
-        
-        .benefit-item {
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .benefit-item:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #00ff00;
+            margin-top: 50px;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Background Video -->
-    <video autoplay muted loop id="bg-video">
-        <source src="https://files.catbox.moe/7mhq31.mp4" type="video/mp4">
+    <!-- Background Video untuk Halaman Utama -->
+    <video id="main-background" autoplay muted loop>
+        <source src="https://files.catbox.moe/93hv8t.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
     
-    <!-- Login Form -->
-    <div class="login-container" id="loginContainer">
-        <div class="login-form">
-            <h2>welcome kalo di minta usn: pw: isi aja acak bakal bisa masuk asal ga kosong aja</h2>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="login()">MASUK</button>
-            <p style="text-align: center; margin-top: 15px; color: #ccc;">
-                Developer: clone
-            </p>
+    <!-- Halaman Login -->
+    <div id="login-page">
+        <div class="login-background"></div>
+        <div class="login-container">
+            <div class="login-form">
+                <h2>kalo disuruh masukin usn pw isi acak tetap bisa masuk asal jgn kosong</h2>
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button onclick="login()">Login</button>
+                <p class="developer-text">developer:clone</p>
+            </div>
         </div>
     </div>
     
-    <!-- Main Content -->
-    <div class="main-content" id="mainContent">
+    
+    <div id="main-page" class="main-container">
         <div class="header">
-            <h1>welcome to website jualan by clone</h1>
-            <p>Developer: clone</p>
+            <h1>CLONE STORE</h1>
+            <p>welcome di web clone </p>
         </div>
         
-        <div class="dashboard-tabs">
-            <button class="tab-button active" onclick="switchTab('dashboard1')">Dashboard 1</button>
-            <button class="tab-button" onclick="switchTab('dashboard2')">Dashboard 2</button>
-        </div>
-        
-        <!-- Dashboard 1 Content -->
-        <div id="dashboard1" class="dashboard-content active">
-            <div class="boxes-container">
-                <div class="box">
-                    <h3>Akun US</h3>
-                    <ul>
-                        <li>Ready stock akun kolsul us: 1</li>
-                        <li>Ready stock akun koljur us: 1</li>
-                        <li class="sold">stock akun terhormat us: sold</li>
-                        <li class="sold">stock stock akun ternama us: sold</li>
-                        <li class="sold">stock akun ahli us: sold</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>Akun ORI</h3>
-                    <ul>
-                        <li>Ready stock akun kolsul ori: 1</li>
-                        <li>Ready stock akun koljur ori: 1</li>
-                        <li class="sold">stock akun terhormat ori: sold</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>Jasa Pembuatan Script</h3>
-                    <ul>
-                        <li>Jasa pembuatan script bug tele: 50k</li>
-                        <li>Jasa pembuatan script bug via wa: 45k</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>Benefit Script Bug Tele</h3>
-                    <ul>
-                        <li>Free req foto sc</li>
-                        <li>Free req function</li>
-                        <li>Free req nama fitur</li>
-                        <li>Free req fitur</li>
-                        <li>Semua yang di perluin gw yg bikin</li>
-                        <li>All clear siap pake</li>
-                        <li>Dan sama kaya via wa</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>JOKI HEMAT BY CLONE</h3>
-                    <ul>
-                        <li>gm to legend b1 = 9k</li>
-                        <li>epic to mawi b1 = 19k</li>
-                        <li>legend to mawi = 35k</li>
-                        <li>mawi granding full = 56k</li>
-                        <li>mawi b15 to honor 25 = 120k</li>
-                        <li>honor 25 to glory 50 = 189k</li>
-                        <li>glory 50 to imo 112 = 350k</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>JOKI GENDONG BY CLONE</h3>
-                    <ul>
-                        <li>1 bintang gm = 3k</li>
-                        <li>1 bintang epic = 4.5k</li>
-                        <li>1 bintang legend = 7k</li>
-                        <li>1 bintang mawi = 10k</li>
-                        <li>1 bintang honor = 13k</li>
-                        <li>1 bintang glory = 16k</li>
-                        <li>1 bintang imo = 19k</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>VPS BY CLONE</h3>
-                    <ul>
-                        <li>ram 8 core 6 = 20k</li>
-                        <li>ram 16 core 8= 45k</li>
-                        <li>ram 32 core 8 = 60k</li>
-                        <li>ram 32 core 16 = 150k</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>Function Bug by Clone</h3>
-                    <ul>
-                        <li>crash ui 15 msg new: 35k</li>
-                        <li>forceclose 1 msg all whatsapp new: 70k</li>
-                        <li>delayhard invisible tahan 2hari new:130k</li>
-                        <li>forceclose×blank ios 15 msg new: 100k</li>
-                        <li>forceclose invis ios new: 50k</li>
-                        <li>delayhard no invis: 60k</li>
-                        <li>forceclose beta 1 msg new: 70k</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>Script Bug Gacor</h3>
-                    <ul>
-                        <li>tredict Invictus no update: 50k</li>
-                        <li>tredict invictus update 3x: 70k</li>
-                        <li>tredict invictus free update perma: 100k</li>
-                        <li>clone crasher no update: 25k</li>
-                        <li>clone crasher free update perma: 40k</li>
-                        <li>alya crasher no update : 30k</li>
-                        <li>alya crasher free update: 50k</li>
-                        <li>scary invictus no update: 35k</li>
-                        <li>scary invictus free update: 75k</li>
-                    </ul>
-                </div>
-                
-                <div class="box">
-                    <h3>APK BUG GACOR by clone</h3>
-                    <ul>
-                        <li>rdvsp project v4</li>
-                        <li>member: 35k/bulan</li>
-                        <li>permanen: 100k</li>
-                        <li>reseller: 75k/bulan</li>
-                        <li>reseller permanen 150k/bulan</li>
-                        <li>Vip accest: 75k/bulan</li>
-                        <li>vip accest permanen: 170k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box Fitur APK Bug RDVSP Project V4 -->
-                <div class="box">
-                    <h3>Fitur APK Bug RDVSP Project V4</h3>
-                    <ul class="feature-list">
-                        <li><strong>Feature:</strong></li>
-                        <li>- DDoS { Website,Server,Wifi }</li>
-                        <li>- Bug WhatsApp</li>
-                        <li>- Chatting Whit User</li>
-                        <li>- WiFi Kill { Attack Router }</li>
-                        <li>- Spam NGL</li>
-                        <li>- Nik Parse { Parsenik }</li>
-                        <li>- Sub Domain Finder</li>
-                        <li>- No sender</li>
-                        <li>- cooldown only 45 detik</li>
-                        <li><strong>Bug Type:</strong></li>
-                        <li>- Crash Infinity ✓</li>
-                        <li>- Crash Android ✓</li>
-                        <li>- Crash IOS ✓</li>
-                        <li>- Blank Freze Phone ✓</li>
-                        <li>- Delay Invisible ✓</li>
-                        <li><strong>DDoS Methods:</strong></li>
-                        <li>- ICMP</li>
-                        <li>- UDP</li>
-                        <li>- TCP SYN-PPS</li>
-                        <li>- TCP ACK-PPS</li>
-                        <li>- TCP SYN-GBPS</li>
-                        <li>- TCP ACK-GBPS</li>
-                    </ul>
-                </div>
-                
-                <!-- Box Ready SC MD -->
-                <div class="box">
-                    <h3>Ready SC MD</h3>
-                    <ul>
-                        <li>ready sc md via wa 1k fitur = 10k enc</li>
-                        <li>ready sc md via wa 2k fitur = 17k enc</li>
-                        <li>ready sc md via wa 3k fitur = 25k enc</li>
-                        <li>ready sc md via tele 700 fitur = 35k no enc</li>
-                    </ul>
-                </div>
-                
-                <!-- Box Layanan Murid -->
-                <div class="box">
-                    <h3>Layanan Murid by Clone</h3>
-                    <ul>
-                        <li>murid python = 15k</li>
-                        <li>murid javascript = 10k</li>
-                        <li>murid html = 15k</li>
-                        <li>murid css = 25k</li>
-                        <li>murid c++ = 30k</li>
-                        <li>murid php = 15k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box LIST NOKOS BY clone -->
-                <div class="box">
-                    <h3>LIST NOKOS BY clone</h3>
-                    <ul>
-                        <li>nokos indo = 5k</li>
-                        <li>nokos rusia = 21k</li>
-                        <li>nokos uk = 12k</li>
-                        <li>nokos ph = 6k</li>
-                        <li>nokos malaysia = 15k</li>
-                        <li>nokos japan = 21k</li>
-                        <li>nokos vietnam = 7k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box Murband by clone -->
-                <div class="box">
-                    <h3>Murband by clone</h3>
-                    <ul>
-                        <li>murid banned public = 15k</li>
-                        <li>murid banned private = 25k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box HARGA AKUN ML US -->
-                <div class="box">
-                    <h3>HARGA AKUN ML US</h3>
-                    <ul>
-                        <li>stock kolsul own mokad 3b ready 1 = 350k</li>
-                        <li>stock kolsul own on ready 1 = 250k</li>
-                        <li>stock koljur ml us own on ready 1 = 100k</li>
-                        <li class="sold">stock terhormat us own mokad = sold</li>
-                        <li class="sold">stock ternama us own mokad = sold</li>
-                    </ul>
-                </div>
-                
-                <!-- Box HARGA AKUN ML ORI -->
-                <div class="box">
-                    <h3>HARGA AKUN ML ORI</h3>
-                    <ul>
-                        <li class="tawar">stock kolsul own off 1 hari = tawar</li>
-                        <li>stock koljur own mokad 2 bulan = 240k</li>
-                        <li class="sold">stock terhormat ori = sold</li>
-                    </ul>
-                </div>
-                
-                <!-- Box LIST JASA BY CLONE -->
-                <div class="box">
-                    <h3>LIST JASA BY CLONE</h3>
-                    <ul>
-                        <li>jasa fix error web html = 5k</li>
-                        <li>jasa fix error script bug via tele = 4k</li>
-                        <li>jasa fix error script bug via wa = 6k</li>
-                        <li>jasa fix error tools python = 7k</li>
-                        <li>jasa tambah fitur sc bug via tele = 8k</li>
-                        <li>jasa encrypt html = 2k</li>
-                        <li>jasa encrypt bot bug = 1k</li>
-                        <li>jasa rename script bug via tele = 5k</li>
-                        <li>jasa rename apk cek ban = 5k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box JASA BIND BY CLONE -->
-                <div class="box">
-                    <h3>JASA BIND BY CLONE</h3>
-                    <ul>
-                        <li>1 akun = 10k</li>
-                        <li>2 akun = 20k</li>
-                        <li>3 akun = 30k</li>
-                        <li>4 akun = 40k</li>
-                        <li>5 akun = 45k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box JASA BUG BY CLONE -->
-                <div class="box">
-                    <h3>JASA BUG BY CLONE</h3>
-                    <ul>
-                        <li>1 nomor = 4k</li>
-                        <li>2 nomor = 7k</li>
-                        <li>3 nomor = 10k</li>
-                        <li>4 nomor = 13k</li>
-                        <li>5 nom极 = 15k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box PAKETAN JASA PEMBUATAN WEBSITE -->
-                <div class="box">
-                    <h3>PAKETAN JASA PEMBUATAN WEBSITE</h3>
-                    <ul>
-                        <li>website top up sudah terpasang api = 50k</li>
-                        <li>website portofolio = 15k</li>
-                        <li>website list joki = 25k</li>
-                        <li>website bug lengkap dengan function = 50k</li>
-                        <li>website bug tidak lengkap dengan function = 30k</li>
-                        <极>website bug dengan fitur ddos dan function = 70k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box PANEL PRIVATE BY CLONE -->
-                <div class="box">
-                    <h3>PANEL PRIVATE BY CLONE</h3>
-                    <ul>
-                        <li>1gb=1k</li>
-                        <li>2gb=2k</li>
-                        <li>3gb=3极</li>
-                        <li>4gb=4k</li>
-                        <li>5gb=5k</li>
-                        <li>6gb=6k</li>
-                        <li>7gb=7k</li>
-                        <li>8gb=8k</li>
-                        <li>9gb=9k</li>
-                        <li>10gb=10k</li>
-                        <li>unlimited= 11k</li>
-                        <li>reseller panel = 15k</li>
-                        <li>admin panel = 20k</li>
-                        <li>patnert panel = 25k</li>
-                        <li>owner panel = 30k</li>
-                        <li>tangan kanan panel = 40k</li>
-                    </ul>
-                    <p style="margin-top: 10px; color: #ff9900; font-size: 0.9em;">
-                        SPEK VPS? ram 16 core 8 | server baru 2 | baru create 3 hari | vps mokad? ga usah pt pt
-                    </p>
-                </div>
-                
-                <!-- Box Payment clone store -->
-                <div class="box">
-                    <h3>Payment Clone Store</h3>
-                    <ul>
-                        <li>
-                            dana: 
-                            <button class="payment-button" onclick="togglePaymentInfo('dana-info')">Tampilkan Nomor</button>
-                            <div id="dana-info" class="payment-info">081227274189</div>
-                        </li>
-                        <li>ovo: beku</极>
-                        <li>qris: chat ke nomor ini 6285857671388</li>
-                    </ul>
-                    <p class="warning-text">HARAP SEND BUKTI TF KE NOMOR YANG DI SEDIAKAN DI QRIS</p>
-                </div>
+        <div class="payment-section">
+            
+            <div class="payment-box">
+                <h3>AKUN ML US</h3>
+                <div class="payment-item">Ready stock akun kolsul us: 1</div>
+                <div class="payment-item">Ready stock akun koljur us: sold</div>
+                <div class="payment-item">Ready stock akun terhormat us: 1</div>
+                <div class="payment-item">stock akun ternama us: sold</div>
+                <div class="payment-item">stock akun ahli us: sold</div>
+                <button class="buy-button" onclick="buyProduct('AKUN ML US')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Akun ORI -->
+            <div class="payment-box">
+                <h3>Akun ORI</h3>
+                <div class="payment-item">Ready stock akun kolsul ori: 1</div>
+                <div class="payment-item">Ready stock akun koljur ori: 2</div>
+                <div class="payment-item">Ready stock akun terhormat ori: 1</div>
+                <button class="buy-button" onclick="buyProduct('Akun ORI')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Jasa Pembuatan Script -->
+            <div class="payment-box">
+                <h3>Jasa Pembuatan Script</h3>
+                <div class="payment-item">Jasa pembuatan script bug tele: 50k</div>
+                <div class="payment-item">Jasa pembuatan script bug via wa: 45k</div>
+                <button class="buy-button" onclick="buyProduct('Jasa Pembuatan Script')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Benefit Script Bug Tele -->
+            <div class="payment-box">
+                <h3>Benefit Script Bug Tele</h3>
+                <div class="payment-item">Free req foto sc</div>
+                <div class="payment-item">Free req function</div>
+                <div class="payment-item">Free req nama fitur</div>
+                <div class="payment-item">Free req fitur</div>
+                <div class="payment-item">Semua yang di perluin gw yg bikin</div>
+                <div class="payment-item">All clear siap pake</div>
+                <div class="payment-item">Dan sama kaya via wa</div>
+                <button class="buy-button" onclick="buyProduct('Benefit Script Bug Tele')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box JOKI HEMAT BY CLONE -->
+            <div class="payment-box">
+                <h3>JOKI HEMAT BY CLONE</h3>
+                <div class="payment-item">gm to legend b1 = 9k</div>
+                <div class="payment-item">epic to mawi b1 = 19k</div>
+                <div class="payment-item">legend to mawi = 35k</div>
+                <div class="payment-item">mawi granding full = 56k</div>
+                <div class="payment-item">mawi b15 to honor 25 = 120k</div>
+                <div class="payment-item">honor 25 to glory 50 = 189k</div>
+                <div class="payment-item">glory 50 to imo 112 = 350k</div>
+                <button class="buy-button" onclick="buyProduct('JOKI HEMAT BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box JOKI GENDONG BY CLONE -->
+            <div class="payment-box">
+                <h3>JOKI GENDONG BY CLONE</h3>
+                <div class="payment-item">1 bintang gm = 3k</div>
+                <div class="payment-item">1 bintang epic = 4.5k</div>
+                <div class="payment-item">1 bintang legend = 7k</div>
+                <div class="payment-item">1 bintang mawi = 10k</div>
+                <div class="payment-item">1 bintang honor = 13k</div>
+                <div class="payment-item">1 bintang glory = 16k</div>
+                <div class="payment-item">1 bintang imo = 19k</div>
+                <button class="buy-button" onclick="buyProduct('JOKI GENDONG BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box list VPS BY CLONE -->
+            <div class="payment-box">
+                <h3>list VPS BY CLONE</h3>
+                <div class="payment-item">ram 8 core 6 = 30k</div>
+                <div class="payment-item">ram 16 core 8= 50k</div>
+                <div class="payment-item">ram 32 core 8 = 90k</div>
+                <div class="payment-item">ram 32 core 16 = 150k</div>
+                <button class="buy-button" onclick="buyProduct('VPS BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Function Bug by Clone -->
+            <div class="payment-box">
+                <h3>Function Bug by Clone</h3>
+                <div class="payment-item">crash ui 15 msg new: 35k</div>
+                <div class="payment-item">forceclose 1 msg all whatsapp new: 70k</div>
+                <div class="payment-item">delayhard invisible tahan 2hari new:130k</div>
+                <div class="payment-item">forceclose×blank ios 15 msg new: 100k</div>
+                <div class="payment-item">forceclose invis ios new: 50k</div>
+                <div class="payment-item">delayhard no invis: 60k</div>
+                <div class="payment-item">forceclose beta 1 msg new: 70k</div>
+                <button class="buy-button" onclick="buyProduct('Function Bug by Clone')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Script Bug Gacor -->
+            <div class="payment-box">
+                <h3>Script Bug Gacor</h3>
+                <div class="payment-item">tredict Invictus no update: 50k</div>
+                <div class="payment-item">tredict invictus update 3x: 70k</div>
+                <div class="payment-item">tredict invictus free update perma: 100k</div>
+                <div class="payment-item">clone crasher no update: 25k</div>
+                <div class="payment-item">alya crasher no update : 30k</div>
+                <div class="payment-item">alya crasher free update: 50k</div>
+                <div class="payment-item">scary invictus no update: 35k</div>
+                <div class="payment-item">scary invictus free update: 75k</div>
+                <button class="buy-button" onclick="buyProduct('Script Bug Gacor')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box APK BUG GACOR by clone -->
+            <div class="payment-box">
+                <h3>APK BUG GACOR by clone</h3>
+                <div class="payment-item">rdvsp project v4</div>
+                <div class="payment-item">member: 35k/bulan</div>
+                <div class="payment-item">permanen: 100k</div>
+                <div class="payment-item">reseller: 75k/bulan</div>
+                <div class="payment-item">reseller permanen 150k/bulan</div>
+                <div class="payment-item">Vip accest: 75k/bulan</div>
+                <div class="payment-item">vip accest permanen: 170k</div>
+                <button class="buy-button" onclick="buyProduct('APK BUG GACOR by clone')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Fitur APK Bug RDVSP Project V4 -->
+            <div class="payment-box">
+                <h3>Fitur APK Bug RDVSP Project V4</h3>
+                <div class="payment-item">Feature:</div>
+                <div class="payment-item">- DDoS { Website,Server,Wifi }</div>
+                <div class="payment-item">- Bug WhatsApp</div>
+                <div class="payment-item">- Chatting Whit User</div>
+                <div class="payment-item">- WiFi Kill { Attack Router }</div>
+                <div class="payment-item">- Spam NGL</div>
+                <div class="payment-item">- Nik Parse { Parsenik }</div>
+                <div class="payment-item">- Sub Domain Finder</div>
+                <div class="payment-item">- No sender</div>
+                <div class="payment-item">- cooldown only 45 detik</div>
+                <div class="payment-item">Bug Type:</div>
+                <div class="payment-item">- Crash Infinity ✓</div>
+                <div class="payment-item">- Crash Android ✓</div>
+                <div class="payment-item">- Crash IOS ✓</div>
+                <div class="payment-item">- Blank Freze Phone ✓</div>
+                <div class="payment-item">- Delay Invisible ✓</div>
+                <div class="payment-item">DDoS Methods:</div>
+                <div class="payment-item">- ICMP</div>
+                <div class="payment-item">- UDP</div>
+                <div class="payment-item">- TCP SYN-PPS</div>
+                <div class="payment-item">- TCP ACK-PPS</div>
+                <div class="payment-item">- TCP SYN-GBPS</div>
+                <div class="payment-item">- TCP ACK-GBPS</div>
+                <button class="buy-button" onclick="buyProduct('Fitur APK Bug RDVSP Project V4')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Ready SC MD -->
+            <div class="payment-box">
+                <h3>Ready SC MD</h3>
+                <div class="payment-item">ready sc md via wa 1k fitur = 10k enc</div>
+                <div class="payment-item">ready sc md via wa 2k fitur = 17k enc</div>
+                <div class="payment-item">ready sc md via wa 3k fitur = 25k enc</div>
+                <div class="payment-item">ready sc md via tele 700 fitur = 35k no enc</div>
+                <button class="buy-button" onclick="buyProduct('Ready SC MD')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box Layanan Murid by Clone -->
+            <div class="payment-box">
+                <h3>Layanan Murid by Clone</h3>
+                <div class="payment-item">murid python = 15k</div>
+                <div class="payment-item">murid javascript = 10k</div>
+                <div class="payment-item">murid html = 15k</div>
+                <div class="payment-item">murid css = 25k</div>
+                <div class="payment-item">murid c++ = 30k</div>
+                <div class="payment-item">murid php = 15k</div>
+                <button class="buy-button" onclick="buyProduct('Layanan Murid by Clone')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box HARGA AKUN ML US -->
+            <div class="payment-box">
+                <h3>HARGA AKUN ML US</h3>
+                <div class="payment-item">stock kolsul own mokad 3b ready 1 = 350k</div>
+                <div class="payment-item">stock kolsul own on ready 1 = 250k</div>
+                <div class="payment-item">stock koljur ml us own on ready 1 = 100k</div>
+                <div class="payment-item">stock terhormat us own mokad 1 = 40k</div>
+                <div class="payment-item">stock ternama us own mokad = sold</div>
+                <button class="buy-button" onclick="buyProduct('HARGA AKUN ML US')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box LIST NOKOS BY clone -->
+            <div class="payment-box">
+                <h3>LIST NOKOS BY clone</h3>
+                <div class="payment-item">nokos indo = 5k</div>
+                <div class="payment-item">nokos rusia = 21k</div>
+                <div class="payment-item">nokos uk = 12k</div>
+                <div class="payment-item">nokos ph = 6k</div>
+                <div class="payment-item">nokos malaysia = 15k</div>
+                <div class="payment-item">nokos japan = 21k</div>
+                <div class="payment-item">nokos vietnam = 7k</div>
+                <button class="buy-button" onclick="buyProduct('LIST NOKOS BY clone')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box HARGA AKUN ML ORI -->
+            <div class="payment-box">
+                <h3>HARGA AKUN ML ORI</h3>
+                <div class="payment-item">stock kolsul own off 1 hari = tawar</div>
+                <div class="payment-item">stock koljur own mokad 2 bulan = 240k</div>
+                <div class="payment-item">stock terhormat ori = sold</div>
+                <button class="buy-button" onclick="buyProduct('HARGA AKUN ML ORI')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box LIST JASA BY CLONE -->
+            <div class="payment-box">
+                <h3>LIST JASA BY CLONE</h3>
+                <div class="payment-item">jasa fix error web html = 5k</div>
+                <div class="payment-item">jasa fix error script bug via tele = 4k</div>
+                <div class="payment-item">jasa fix error script bug via wa = 6k</div>
+                <div class="payment-item">jasa fix error tools python = 7k</div>
+                <div class="payment-item">jasa tambah fitur sc bug via tele = 8k</div>
+                <div class="payment-item">jasa encrypt html = 2k</div>
+                <div class="payment-item">jasa encrypt bot bug = 1k</div>
+                <div class="payment-item">jasa rename script bug via tele = 5k</div>
+                <div class="payment-item">jasa rename apk cek ban = 5k</div>
+                <button class="buy-button" onclick="buyProduct('LIST JASA BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box JASA BIND BY CLONE -->
+            <div class="payment-box">
+                <h3>JASA BIND BY CLONE</h3>
+                <div class="payment-item">1 akun = 10k</div>
+                <div class="payment-item">2 akun = 15k</div>
+                <div class="payment-item">3 akun = 25k</div>
+                <div class="payment-item">4 akun = 30k</div>
+                <div class="payment-item">5 akun = 25k</div>
+                <button class="buy-button" onclick="buyProduct('JASA BIND BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box PAKETAN JASA PEMBUATAN WEBSITE -->
+            <div class="payment-box">
+                <h3>PAKETAN JASA PEMBUATAN WEBSITE</h3>
+                <div class="payment-item">website top up sudah terpasang api = 50k</div>
+                <div class="payment-item">website portofolio = 15k</div>
+                <div class="payment-item">website list joki = 25k</div>
+                <div class="payment-item">website bug lengkap dengan function = 50k</div>
+                <div class="payment-item">website bug tidak lengkap dengan function = 30k</div>
+                <div class="payment-item">website bug dengan fitur ddos dan function = 70k</div>
+                <button class="buy-button" onclick="buyProduct('PAKETAN JASA PEMBUATAN WEBSITE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box APK BUG TR4SFLOX -->
+            <div class="payment-box">
+                <h3>OPEN APK BUG TR4SFLOX</h3>
+                <div class="payment-item">⭐ KELEBIHAN ⭐</div>
+                <div class="payment-item">• BEBAS BUG TANPA MENGGUNAKAN SENDER</div>
+                <div class="payment-item">• BEBAS SPAM BUG TANPA HARUS TAKUT SENDER KENON</div>
+                <div class="payment-item">• BEBAS BUG BEBERAPA NOMOR PUN,DAN BEBAS MENGGUNAKAN COMMAND MEMILIKI SECURITY USERNAME & PASSWORD</div>
+                <div class="payment-item">• TANPA ADA PANEL DLL, KALIAN TINGGAL LOGIN DAN LANGSUNG BUG SEPUASNYA</div>
+                <div class="payment-item">😈 FITUR BUG 😈</div>
+                <div class="payment-item">• CRASH UI KILLER (BLANK, UI)</div>
+                <div class="payment-item">• DELAY INVISIBLE HARD</div>
+                <div class="payment-item">• INVISIBLE DELAY NGURAS KUOTA</div>
+                <div class="payment-item">• FORCECLOSE IPHONE</div>
+                <div class="payment-item">• CRASH (FORCECLOSE SPAM )</div>
+                <div class="payment-item">💵 PRICE 💵</div>
+                <div class="payment-item">1 BULAN : 35K</div>
+                <div class="payment-item">PERMANEN : 100K</div>
+                <button class="buy-button" onclick="buyProduct('APK BUG TR4SFLOX')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box JASA BUG BY CLONE -->
+            <div class="payment-box">
+                <h3>JASA BUG BY CLONE</h3>
+                <div class="payment-item">1 nomor = 4k</div>
+                <div class="payment-item">2 nomor = 7k</div>
+                <div class="payment-item">3 nomor = 10k</div>
+                <div class="payment-item">4 nomor = 13k</div>
+                <div class="payment-item">5 nomor = 15k</div>
+                <button class="buy-button" onclick="buyProduct('JASA BUG BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box PANEL PRIVATE BY CLONE -->
+            <div class="payment-box">
+                <h3>PANEL PRIVATE BY CLONE</h3>
+                <div class="payment-item">1gb=1k</div>
+                <div class="payment-item">2gb=2k</div>
+                <div class="payment-item">3gb=3k</div>
+                <div class="payment-item">4gb=4k</div>
+                <div class="payment-item">5gb=5k</div>
+                <div class="payment-item">6gb=6k</div>
+                <div class="payment-item">7gb=7k</div>
+                <div class="payment-item">8gb=8k</div>
+                <div class="payment-item">9gb=9k</div>
+                <div class="payment-item">10gb=10k</div>
+                <div class="payment-item">unlimited= 11k</div>
+                <div class="payment-item">reseller panel = 15k</div>
+                <div class="payment-item">admin panel = 20k</div>
+                <div class="payment-item">patnert panel = 25k</div>
+                <div class="payment-item">owner panel = 30k</div>
+                <div class="payment-item">tangan kanan panel = 40k</div>
+                <div class="payment-item">SPEK VPS? ram 16 core 8 | server baru 2 | baru create 3 hari | vps mokad? ga usah pt pt</div>
+                <button class="buy-button" onclick="buyProduct('PANEL PRIVATE BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box LIST JASA BAN BY CLONE -->
+            <div class="payment-box">
+                <h3>LIST JASA BAN BY CLONE</h3>
+                <div class="payment-item">1 nomor = 3k</div>
+                <div class="payment-item">2 nomor = 6k</div>
+                <div class="payment-item">3 nomor = 8k</div>
+                <div class="payment-item">4 nomor = 11k</div>
+                <button class="buy-button" onclick="buyProduct('LIST JASA BAN BY CLONE')">Beli Sekarang</button>
+            </div>
+            
+            <!-- Box OPEN ADMIN CH -->
+            <div class="payment-box">
+                <h3>OPEN JUGA OPEN ADMIN CH</h3>
+                <div class="payment-item">ch 300 pengikut =</div>
+                <div class="payment-item">5k = 1 bulan</div>
+                <div class="payment-item">10k = permanen</div>
+                <div class="payment-item">ch 1.5kp = </div>
+                <div class="payment-item">15k = 1 bulan</div>
+                <div class="payment-item">45 = permanen</div>
+                <div class="payment-item">ch 8.9kp =</div>
+                <div class="payment-item">35k = 1 bulan</div>
+                <div class="payment-item">80k =  permanen</div>
+                <button class="buy-button" onclick="buyProduct('OPEN ADMIN CH')">Beli Sekarang</button>
             </div>
         </div>
         
-        <!-- Dashboard 2 Content -->
-        <div id="dashboard2" class="dashboard-content">
-            <div class="boxes-container">
-                <!-- Box CLONE OPEN PATNERT -->
-                <div class="box">
-                    <h3>CLONE OPEN PATNERT</h3>
-                    <ul>
-                        <li>patnert vip = 20k</li>
-                        <li>patnert svip = 35k</li>
-                        <li>patnert super svip = 60k</li>
-                    </ul>
-                </div>
-                
-                <!-- Box PATNERT VIP -->
-                <div class="box">
-                    <h3>PATNERT VIP</h3>
-                    <ul>
-                        <li class="benefit-item">get function setiap hari</li>
-                        <li class="benefit-item">get code html setiap hari</li>
-                        <li class="benefit-item">get 300 file base</li>
-                        <li class="benefit-item">free fix sc error</li>
-                        <li class="benefit-item">dapat buyer kalo ada</li>
-                        <li class="benefit-item">masuk gb all patnert</li>
-                        <li class="benefit-item">get tutor pasang function</li>
-                    </ul>
-                </div>
-                
-                <!-- Box PATNERT SVIP -->
-                <div class="box">
-                    <h3>PATNERT SVIP</h3>
-                    <ul>
-                        <li class="benefit-item">get function setiap hari</li>
-                        <li class="benefit-item">get code html setiap hari</li>
-                        <li class="benefit-item">get 300 file base</li>
-                        <li class="benefit-item">free fix sc error</li>
-                        <li class="benefit-item">dapat buyer kalo ada</li>
-                        <li class="benefit-item">masuk gb all patnert</li>
-                        <li class="benefit-item">masuk tqto sc gw</li>
-                        <li class="benefit-item">get ress sc clonecrasher</li>
-                        <li class="benefit-item">get murid ban private</li>
-                        <li class="benefit-item">get murid unband</li>
-                        <li class="benefit-item">get sc database clonecrasher</li>
-                        <li class="benefit-item">get tutor pasang function</li>
-                    </ul>
-                </div>
-                
-                <!-- Box PATNERT SUPER VIP -->
-                <div class="box">
-                    <h3>PATNERT SUPER VIP</h3>
-                    <ul>
-                        <li class="benefit-item">get function setiap hari</li>
-                        <li class="benefit-item">get code html setiap hari</li>
-                        <li class="benefit-item">get 300 file base</li>
-                        <li class="benefit-item">free fix sc error</li>
-                        <li class="benefit-item">dapat buyer kalo ada</li>
-                        <li class="benefit-item">masuk gb all patnert</li>
-                        <li class="benefit-item">masuk tqto sc gw</li>
-                        <li class="benefit-item">get ress sc clonecrasher</li>
-                        <li class="benefit-item">get murid ban private patnert</li>
-                        <li class="benefit-item">get murid unband private patnert</li>
-                        <li class="benefit-item">get sc database clonecrasher</li>
-                        <li class="benefit-item">masuk ch 1.5kp no suntik</li>
-                        <li class="benefit-item">get tutor pasang function</li>
-                        <li class="benefit-item">get base 900</li>
-                        <li class="benefit-item">get all function gw 1k file</li>
-                        <li class="benefit-item">get patnert alyacrasher</li>
-                        <li class="benefit-item">get owner clonecrasher</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <h3>Payment Clone Store</h3>
+            <button class="payment-button" onclick="showDana()">DANA</button>
+            <button class="payment-button">OVO: beku</button>
+            <button class="payment-button">QRIS: chat ke nomor ini 081227274189</button>
+            <p>HARAP SEND BUKTI TF KE NOMOR YANG DI SEDIAKAN DI QRIS</p>
+            
+            <button class="whatsapp-button" onclick="openWhatsApp()">
+                Hubungi Kami via WhatsApp
+            </button>
+        </div>
+        
+        <div class="footer">
+            <p>© disarankan agar tidak spam ya kak 🙏</p>
         </div>
     </div>
 
     <script>
-        // Fungsi login yang menerima input apapun
+        
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            // Terima input apapun (selama tidak kosong)
+          
             if (username.trim() !== '' && password.trim() !== '') {
-                document.getElementById('loginContainer').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
+                
+                localStorage.setItem('isLoggedIn', 'true');
+                
+                
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('main-page').style.display = 'block';
             } else {
-                alert('Masukkan username dan password!');
+                alert('Username dan password tidak boleh kosong!');
             }
         }
         
-        // Support untuk tekan Enter untuk login
-        document.getElementById('password').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                login();
-            }
-        });
         
-        // Fungsi untuk menampilkan/sembunyikan info pembayaran
-        function togglePaymentInfo(id) {
-            const infoElement = document.getElementById(id);
-            if (infoElement.style.display === 'block') {
-                infoElement.style.display = 'none';
+        function openWhatsApp() {
+            window.open('https://wa.me/6281227274189', '_blank');
+        }
+        
+        
+        function showDana() {
+            alert('Nomor DANA: 081227274189');
+        }
+        
+        
+        function buyProduct(productName) {
+            const message = `halo bang gw mau beli: ${productName}`;
+            window.open(`https://wa.me/6281227274189?text=${encodeURIComponent(message)}`, '_blank');
+        }
+        
+        
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            
+            if (isLoggedIn === 'true') {
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('main-page').style.display = 'block';
             } else {
-                infoElement.style.display = 'block';
+                document.getElementById('login-page').style.display = 'block';
+                document.getElementById('main-page').style.display = 'none';
             }
-        }
-        
-        // Fungsi untuk beralih antara dashboard
-        function switchTab(tabId) {
-            // Sembunyikan semua tab
-            document.querySelectorAll('.dashboard-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Tampilkan tab yang dipilih
-            document.getElementById(tabId).classList.add('active');
-            
-            // Update status aktif tombol tab
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            event.target.classList.add('active');
-        }
+        };
     </script>
 </body>
-         </html>                                          
+</html>                                    
